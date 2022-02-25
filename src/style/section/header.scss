@@ -1,0 +1,49 @@
+.header {
+    &__wrap {
+        display: relative;
+    }
+    &__content {
+        background: red;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        max-width: 1283px;
+    }
+    &__nav {
+        .menu__toggle {
+            position: absolute;
+            visibility: hidden;       
+            right:100%;
+        }
+        &-items {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;  
+        }
+        &-item {
+            margin-right: 31px;
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+        &-link {
+            @include link;
+            color:$c-light-text;
+        }
+    }
+    &__button {
+        &:hover {
+            background: $c-lightbg;
+            color:$c-first-text;
+        }
+    }
+}
+
+@media screen and (max-width:770px) {
+    .header {
+
+    } 
+}
