@@ -21,5 +21,52 @@
             "url": "#",
             "link": "Learn More"
         }
+    ],
+    "pricingcards": [
+        {
+            "title":"Education",
+            "description":"Brief price Description",
+            "img":"../img/pricing.png",
+            "price":"0",
+            "curr":"$",
+            "per":"per/month",
+            "operators":"Only 2 Operators",
+            "cart":"Abandoned Cart",
+            "social":"Facebook & Instagram Ads",
+            "notifications":"Order Notifications",
+            "pages":"Landing Pages",
+            "url":"#",
+            "button":"Order Now"
+        },
+        {
+            "title":"Professional",
+            "description":"Brief price Description",
+            "img":"../img/pricing1.png",
+            "price":"10",
+            "curr":"$",
+            "per":"per/month",
+            "operators":"Only 2 Operators",
+            "cart":"Abandoned Cart",
+            "social":"Facebook & Instagram Ads",
+            "notifications":"Order Notifications",
+            "pages":"Landing Pages",
+            "url":"#",
+            "button":"Order Now"
+        },
+        {
+            "title":"Business",
+            "description":"Brief price Description",
+            "img":"../img/pricing2.png",
+            "price":"99",
+            "curr":"$",
+            "per":"per/month",
+            "operators":"Only 2 Operators",
+            "cart":"Abandoned Cart",
+            "social":"Facebook & Instagram Ads",
+            "notifications":"Order Notifications",
+            "pages":"Landing Pages",
+            "url":"#",
+            "button":"Order Now"
+        }
     ]
 }

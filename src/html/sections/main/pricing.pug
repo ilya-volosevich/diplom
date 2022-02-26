@@ -1,0 +1,10 @@
+include ../../components/pricingcards.pug
+
+section.pricing
+	.pricing__content.container
+		.pricing__content-top
+			h3.pricing__title Simple Pricing for Your Team
+			p.pricing__description Slate helps you see how many more days you need 
+		.pricing__cards
+			each card in pricingcards
+				+pricingcards(card.title,card.description,card.img,card.price,card.curr,card.per,card.operators,card.cart,card.social,card.notifications,card.pages,card.button,card.url)
