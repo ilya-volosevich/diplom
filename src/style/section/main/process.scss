@@ -1,0 +1,131 @@
+.process,.solutions {
+    
+    &__content {
+        display: grid;
+        grid-template-areas: 
+        "title img"
+        "descr img"
+        "buttons img";
+        margin-bottom: 153px;   
+        &-title {
+            grid-area: title;
+            align-self: flex-end;
+            @include secondheadline;
+            color:$c-first-text;
+            padding: 0px 10px;
+            
+        }
+        &-descr {
+            grid-area: descr;
+            align-self: center;
+            @include subheading;
+            color:$c-second-text;
+            padding: 0px 10px;
+            max-width: 505px;
+            
+        }
+        &-buttons {
+            grid-area: buttons;
+            align-self: flex-start;   
+            padding: 0px 10px;
+            display: flex;
+            flex-direction: row
+        }
+        &-button {
+            @include button;
+            color:$c-primary;
+            margin-right: 22px;
+            padding: 18px 46px;
+            border: 1px solid #30D7BA;
+            border-radius: 39px;    
+        }
+        &-button:hover {
+            background: $c-secondary;
+            color: $c-light-text;
+        }
+        &-img {
+            grid-area: img;
+        }
+    }
+}
+
+.operations {
+    &__content {
+        &-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        display: grid;
+        align-items: center;
+        margin-bottom: 153px;
+        grid-template-areas: 
+        "img title"
+        "img descr"
+        "img buttons" ;
+        &-title {
+            grid-area: title;
+            align-self: flex-end;
+            @include secondheadline;
+            color:$c-first-text;
+            padding: 0px 10px;
+            
+        }
+        &-descr {
+            grid-area: descr;
+            align-self: center;
+            @include subheading;
+            color:$c-second-text;
+            padding: 0px 10px;
+            max-width: 505px;
+            
+        }
+        &-buttons {
+            grid-area: buttons;
+            align-self: flex-start;   
+            padding: 0px 10px;
+        }
+        &-button {
+            @include button;
+            color:$c-primary;
+            margin-right: 22px;
+            padding: 18px 46px;
+            border: 1px solid #30D7BA;
+            border-radius: 39px;
+        }
+        &-button:hover {
+            background: $c-secondary;
+            color: $c-light-text;
+        }
+        &-img {
+            grid-area: img;
+        }
+    }
+}
+
+@media (max-width:600px) {
+    .process,.solutions,.operations {
+        &__content {
+            display: grid;
+            align-items: center;
+            grid-template-areas: 
+            "title"
+            "descr"
+            "img"
+            "buttons";
+            &-buttons {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+            }
+            &-button {
+                margin-right: 0px;
+                margin-bottom: 22px;
+            }
+            &-button:last-child {
+                
+            }
+        }
+    }
+}
