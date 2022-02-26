@@ -1,0 +1,8 @@
+include ../../components/builtcards.pug
+
+section.built
+    .built__content.container
+        h3.built__title FigmaLand was Built Specifically for You
+        .built__cards 
+            each item in builtcards
+                +builtcards(item.img,item.title,item.description,item.url,item.link)
