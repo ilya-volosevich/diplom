@@ -1,0 +1,18 @@
+mixin pricingcards(title,description,img,price,curr,per,operators,cart,social,notifications,pages,button,url)
+    .pricing__card 
+        h5.pricing__card-title= title 
+        p.pricing__card-description= description 
+        .pricing__card-img
+            img(src= img)
+        .pricing__cardprice
+            p.pricing__card-price= price
+            .pricing__card-info 
+                p.pricing__card-curr= curr 
+                p.pricing__card-per= per 
+        span.pricing__card-operators= operators 
+        span.pricing__card-cart= cart
+        span.pricing__card-social= social 
+        span.pricing__card-notifications= notifications 
+        span.pricing__card-pages= pages 
+        a.pricing__card-button(href= url)= button
+            

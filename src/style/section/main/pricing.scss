@@ -1,0 +1,87 @@
+.pricing {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        &-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }  
+    }
+    &__title {
+        @include secondheadline;
+        color:$c-first-text;
+        margin-bottom: 30px;
+    }
+    &__description {
+        @include paragraphe;
+        color:$c-second-text;
+        margin-bottom: 30px;
+    }
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(305px,1fr));
+        gap:30px;
+    }
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 0;
+        border: 1px solid #DEDEDE;
+        border-radius: 10px;
+        &-title {
+            @include title;
+            color:$c-first-text;
+        }
+        &-description {
+            @include subtitle;
+            color:$c-second-text;
+            margin-bottom: 30px;
+        }
+        &-img {
+            margin-bottom: 30px;
+        }
+        &-operators,&-cart,&-social,&-notifications,&-pages {
+            @include link;
+            color: $c-first-text;
+            margin-bottom: 30px;
+        }
+        &-button {
+            color:$c-light-text;
+            @include button;
+            background: #03D6F3;
+            box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.15);
+            border-radius: 39px;
+            padding: 20px 72px;
+        }
+        &-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+        }
+        &-curr {
+            @include title;
+            color:$c-primary;
+        }
+        &-per {
+            @include subtitle;
+            color:$c-second-text;
+        }
+        &price {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;    
+        }
+        &-price {
+            @include headline;
+            color: $c-primary;
+            padding: 0 10px;
+        }
+    }
+    
+}
