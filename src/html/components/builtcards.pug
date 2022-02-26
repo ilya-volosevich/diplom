@@ -1,0 +1,7 @@
+mixin builtcards(img,title,description,url,link)
+    .built__card
+        .built__card-img
+            img(src= img)
+        h3.built__card-title= title
+        p.built__card-description= description 
+        a.built__card-link(href= url)= link

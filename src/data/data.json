@@ -1,3 +1,25 @@
 {
-    
+    "builtcards" :[
+        {
+            "img":"../img/built1.svg",
+            "title": "Managment",
+            "description": "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+            "url": "#",
+            "link": "Learn More"
+        },
+        {
+            "img":"../img/built2.svg",
+            "title": "Managment",
+            "description": "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+            "url": "#",
+            "link": "Learn More"
+        },
+        {
+            "img":"../img/built3.svg",
+            "title": "Managment",
+            "description": "Slate helps you see how many more days you need to work to reach your financial goal for the month and year.",
+            "url": "#",
+            "link": "Learn More"
+        }
+    ]
 }
