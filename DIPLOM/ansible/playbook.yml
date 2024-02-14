@@ -1,0 +1,52 @@
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/default.yml
+
+  environment:
+    ANSIBLE_HOST_KEY_CHECKING: "False"
+
+  tasks:
+    - name: Install Packages
+      apt:
+        name: 
+          - python3-pymysql
+          - python-pip
+          - libmysqlclient-dev
+        update_cache: yes
+        state: latest
+
+  # MySQL Configuration
+    - name: Install MySQL server
+      apt:
+        name: mysql-server
+        state: present
+  
+    - name: Sets the root password
+      mysql_user:
+        name: "{{ mysql_root }}"
+        password: "{{ mysql_root_password }}"
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+
+  # Install Nodejs + Angular CLI
+    - name: Download Node.js setup script
+      get_url:
+        url: https://deb.nodesource.com/setup_current.x
+        dest: /tmp/setup_node.sh
+
+    - name: Run Node.js setup script
+      shell: bash /tmp/setup_node.sh
+
+    - name: Install Node.js
+      apt:
+        name: nodejs
+        state: latest
+
+    - name: Install Angular CLI
+      npm:
+        name: "@angular/cli"
+        global: yes
+
+  
+
