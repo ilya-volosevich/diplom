@@ -1,0 +1,47 @@
+---
+- name: Install and Configure Jenkins
+  hosts: Jenkins
+  become: yes
+
+  tasks:
+    - name: Install Packages
+      apt:
+        name:
+        - git 
+        update_cache: yes
+        state: latest
+
+    - name: Install Java
+      apt:
+        name: default-jre
+        state: present
+
+    - name: Загрузка ключа Jenkins
+      get_url:
+        url: https://pkg.jenkins.io/debian/jenkins.io-2023.key
+        dest: /usr/share/keyrings/jenkins-keyring.asc
+        mode: '0644'
+
+    - name: Добавление репозитория Jenkins
+      lineinfile:
+        path: /etc/apt/sources.list.d/jenkins.list
+        line: 'deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/'
+        create: yes
+
+    - name: Установка пакета Jenkins
+      apt:
+        name: jenkins
+        state: present
+
+    - name: Start service Jenkins
+      service:
+        name: jenkins
+        state: started
+        enabled: yes
+
+
+  handlers:
+    - name: Restart Jenkins
+      service:
+        name: jenkins
+        state: restarted

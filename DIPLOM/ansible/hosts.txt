@@ -1,3 +1,5 @@
-[GCP]
-ubuntu ansible_host=34.118.1.167 ansible_user=iv
+[Production]
+prod ansible_host=34.116.145.60 ansible_user=iv
 
+[Jenkins]
+jenkins ansible_host=34.116.189.122 ansible_user=iv

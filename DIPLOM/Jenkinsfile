@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                sh 'rm -rf *'
+                sh 'git clone https://github.com/ilya-volosevich/diplom.git'
+                sh 'ls -lah'
+                sh 'pwd'
+            }
+        }
+        stage('Run Backend') {
+            steps{
+                dir("/home/jenkins/workspace/pipeline/diplom/DIPLOM/angular-16-node-project/node-express-mysql-server") {
+                    sh "pm2 start server.js"
+                }
+            }
+        }
+        stage('Run Frontend'){
+            steps{
+                dir('/home/jenkins/workspace/pipeline/diplom/DIPLOM/angular-16-node-project/angular-16-client'){
+                    sh "npm install"
+                    sh "ng serve --host 0.0.0.0 --port 8081"
+                }
+            }    
+        }   
+    }
+}

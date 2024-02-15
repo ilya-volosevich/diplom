@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: Production
   become: true
   vars_files:
     - vars/default.yml
@@ -14,20 +14,31 @@
           - python3-pymysql
           - python-pip
           - libmysqlclient-dev
+          - git
         update_cache: yes
         state: latest
+
 
   # MySQL Configuration
     - name: Install MySQL server
       apt:
         name: mysql-server
         state: present
-  
+
     - name: Sets the root password
       mysql_user:
         name: "{{ mysql_root }}"
         password: "{{ mysql_root_password }}"
         login_unix_socket: /var/run/mysqld/mysqld.sock
+        login_user: "{{ mysql_root }}"
+        login_password: "{{ mysql_root_password }}"
+    
+    - name: Create testdb
+      mysql_db:
+        name: testdb
+        state: present
+        login_user: "{{ mysql_root }}"
+        login_password: "{{ mysql_root_password }}"
 
   # Install Nodejs + Angular CLI
     - name: Download Node.js setup script
@@ -47,6 +58,12 @@
       npm:
         name: "@angular/cli"
         global: yes
+
+  # Install Java
+    - name: Install Java
+      apt:
+        name: default-jre
+        state: present
 
   
 
